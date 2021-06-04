@@ -1,7 +1,6 @@
 package game;
 
-/*  Program structure: playerOrComputer boolean variable (in main class, for details check comment). running boolean. Player versus player main method. Player versus computer main method.
-Get player1 input method. Get player2 input. Get computer move. */
+//This class counstructs the Rock, Paper, Scissors program
 
 import java.awt.*;
 
@@ -42,6 +41,7 @@ public Controller(){
     }
         
 }
+//It gets the score of the players and then checks the input of both players and gets the winner
 public void playerVsPlayer(){
     while(running){
         JOP.msg("The score is: " + Player1.getScore() + " for player one \n the score is: " + Player2.getScore() + " for player two.");
@@ -53,6 +53,8 @@ public void playerVsPlayer(){
     }
     running = true;
 }
+
+//It gets the score of the player and the computer, and then checks the input of both and gets the winner
 public void playerVsComputer(){
     while(running){
         JOP.msg("The score is: " + Player1.getScore() + " for player one \n the score is: " + Computer.getScore() + " for computer.");
@@ -65,6 +67,7 @@ public void playerVsComputer(){
     running = true;
 }
 
+//This method asks the user between Player vs Player or Player vs Computer
 public void setGame() {
 	String playerOrComputer = JOP.in("Writer 'p' to play against another player or write 'c' to play against the computer. \n The current high scores are: \n Player 1: " + Player1.getHighScore() + "\n Player 2: " + Player2.getHighScore() + "\n Computer: " + Computer.getHighScore() + "\n Player health: " + Player1.gethealth() + "\n Computer health: " + Computer.gethealth() + "\n Player Bar: " + Player1.getBar());
 
@@ -77,7 +80,7 @@ public void setGame() {
         playerVsComputer();
     }
 }
-
+//It compares the input of each player and decides the winner
 public void getWinnerPVP(){
 	if(Player1.getGuess().equalsIgnoreCase("rock") && Player2.getGuess().equalsIgnoreCase("paper")){
         Player2.increment();
@@ -118,6 +121,7 @@ public void getWinnerPVP(){
         running = false;
     }
 }
+//It compares the input of the player and the computer, and decides the winner
 public void getWinnerPVC(){
     if(Player1.getGuess().equalsIgnoreCase("rock") && Computer.getGuess().equalsIgnoreCase("paper")){
         Computer.increment();
