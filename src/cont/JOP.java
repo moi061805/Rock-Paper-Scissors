@@ -1,6 +1,6 @@
 package cont;
 
-
+//This class enables me to use the JOptionPane features
 import javax.swing.JOptionPane;
 
 public class JOP {
