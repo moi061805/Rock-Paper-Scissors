@@ -1,5 +1,6 @@
 package game;
 
+//This class creates the program
 public class Main {
     public static void main(String[] args){
         try {
